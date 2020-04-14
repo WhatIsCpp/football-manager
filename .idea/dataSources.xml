@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="PostgreSQL - footballmanager@localhost" uuid="08fbd5ee-3dd3-4888-8d7c-6102d0b93186">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/footballmanager</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="demo/Hibernate" uuid="e0e61623-1b8c-4164-a96b-cd5787f0a8e1">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/footballmanager</jdbc-url>
+    </data-source>
+  </component>
+</project>
