@@ -1,10 +1,10 @@
 package com.app.demo;
 
-import com.app.demo.dto.FootballPlayerInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerResponseDto;
 import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.exceptions.FootballPlayerNotLegalException;
 import com.app.demo.mapper.DtoMapper;
+import com.app.demo.model.dto.FootballPlayerInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballPlayerResponseDto;
 import com.app.demo.model.entity.FootballPlayer;
 import com.app.demo.repository.CountryDictionaryRepository;
 import com.app.demo.repository.FootballPlayerRepository;

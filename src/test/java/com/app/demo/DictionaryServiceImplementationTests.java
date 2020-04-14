@@ -1,7 +1,7 @@
 package com.app.demo;
 
-import com.app.demo.dto.DictionaryResponseDto;
 import com.app.demo.mapper.DtoMapper;
+import com.app.demo.model.dto.DictionaryResponseDto;
 import com.app.demo.model.entity.CountryDictionary;
 import com.app.demo.model.entity.CurrencyDictionary;
 import com.app.demo.repository.CountryDictionaryRepository;
@@ -12,14 +12,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.boot.test.mock.mockito.MockBeans;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;

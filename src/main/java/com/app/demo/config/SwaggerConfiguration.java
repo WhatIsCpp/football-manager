@@ -12,7 +12,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableAutoConfiguration
 @Configuration
 @EnableSwagger2
-public class SpringConfiguration {
+public class SwaggerConfiguration {
 
     @Bean
     public Docket api() {

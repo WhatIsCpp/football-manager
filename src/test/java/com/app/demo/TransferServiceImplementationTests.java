@@ -1,11 +1,9 @@
 package com.app.demo;
 
-import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerHistoryResponseDto;
-import com.app.demo.dto.FootballPlayerTransferRequestDto;
 import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.mapper.DtoMapper;
-import com.app.demo.model.entity.FootballPlayer;
+import com.app.demo.model.dto.FootballPlayerHistoryInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballPlayerTransferRequestDto;
 import com.app.demo.repository.FootballPlayerFootballTeamHistoryRepository;
 import com.app.demo.repository.FootballPlayerRepository;
 import com.app.demo.repository.FootballTeamRepository;
@@ -13,7 +11,6 @@ import com.app.demo.service.implementations.TransferServiceImplementation;
 import com.app.demo.service.interfaces.FootballPlayerFootballTeamHistoryService;
 import com.app.demo.service.interfaces.TransferService;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
@@ -23,9 +20,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)

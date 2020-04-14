@@ -1,7 +1,7 @@
 package com.app.demo.service.interfaces;
 
-import com.app.demo.dto.FootballTeamInsertOrUpdateDto;
-import com.app.demo.dto.FootballTeamResponseDto;
+import com.app.demo.model.dto.FootballTeamInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballTeamResponseDto;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;

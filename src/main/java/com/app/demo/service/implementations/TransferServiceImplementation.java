@@ -1,12 +1,12 @@
 package com.app.demo.service.implementations;
 
-import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerHistoryResponseDto;
-import com.app.demo.dto.FootballPlayerResponseDto;
-import com.app.demo.dto.FootballPlayerTransferRequestDto;
-import com.app.demo.dto.FootballPlayerTransferResponseDto;
 import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.mapper.DtoMapper;
+import com.app.demo.model.dto.FootballPlayerHistoryInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballPlayerHistoryResponseDto;
+import com.app.demo.model.dto.FootballPlayerResponseDto;
+import com.app.demo.model.dto.FootballPlayerTransferRequestDto;
+import com.app.demo.model.dto.FootballPlayerTransferResponseDto;
 import com.app.demo.model.entity.FootballPlayer;
 import com.app.demo.model.entity.FootballPlayerFootballTeamHistory;
 import com.app.demo.model.entity.FootballTeam;

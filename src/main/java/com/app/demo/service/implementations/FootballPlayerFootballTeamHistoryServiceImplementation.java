@@ -1,8 +1,9 @@
 package com.app.demo.service.implementations;
 
-import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerHistoryResponseDto;
+import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.mapper.DtoMapper;
+import com.app.demo.model.dto.FootballPlayerHistoryInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballPlayerHistoryResponseDto;
 import com.app.demo.model.entity.FootballPlayerFootballTeamHistory;
 import com.app.demo.repository.FootballPlayerFootballTeamHistoryRepository;
 import com.app.demo.repository.FootballPlayerRepository;
@@ -12,8 +13,6 @@ import com.app.demo.util.MyBeansUtils;
 import com.app.demo.util.StaticsUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-
-import com.app.demo.exceptions.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -67,10 +66,10 @@ public class FootballPlayerFootballTeamHistoryServiceImplementation implements F
     }
 
     @Override
-    public List<FootballPlayerHistoryResponseDto> getAllByTeamAndJoinDateAndExitDate(String uFTI, LocalDate joinDate, LocalDate exitDate) {
+    public List<FootballPlayerHistoryResponseDto> getAllByTeamAndJoinDateAndExitDate(String uFTI, LocalDate joinDate) {
 
         return dtoMapper.asFootballPlayerHistoryResponseDto(footballPlayerFootballTeamHistoryRepository
-                .findAllByFootballTeam_UniqueFootballTeamIdentifierAndJoinDateIsBeforeAndExitDateIsAfter(uFTI, joinDate, exitDate));
+                .findAllByDate(uFTI, joinDate));
     }
 
 }

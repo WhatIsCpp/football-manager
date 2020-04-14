@@ -1,6 +1,6 @@
-package com.app.demo.dto;
+package com.app.demo.model.dto;
 
-import com.app.demo.dto.base.FootballPlayerHistoryBaseDto;
+import com.app.demo.model.dto.base.FootballPlayerHistoryBaseDto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

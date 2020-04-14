@@ -1,9 +1,9 @@
 package com.app.demo;
 
-import com.app.demo.dto.FootballTeamInsertOrUpdateDto;
-import com.app.demo.dto.FootballTeamResponseDto;
 import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.mapper.DtoMapper;
+import com.app.demo.model.dto.FootballTeamInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballTeamResponseDto;
 import com.app.demo.model.entity.FootballTeam;
 import com.app.demo.repository.CountryDictionaryRepository;
 import com.app.demo.repository.CurrencyDictionaryRepository;

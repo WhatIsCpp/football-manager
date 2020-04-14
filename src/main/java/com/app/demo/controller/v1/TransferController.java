@@ -1,8 +1,8 @@
 package com.app.demo.controller.v1;
 
-import com.app.demo.dto.FootballPlayerResponseDto;
-import com.app.demo.dto.FootballPlayerTransferRequestDto;
-import com.app.demo.dto.FootballPlayerTransferResponseDto;
+import com.app.demo.model.dto.FootballPlayerResponseDto;
+import com.app.demo.model.dto.FootballPlayerTransferRequestDto;
+import com.app.demo.model.dto.FootballPlayerTransferResponseDto;
 import com.app.demo.service.interfaces.TransferService;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

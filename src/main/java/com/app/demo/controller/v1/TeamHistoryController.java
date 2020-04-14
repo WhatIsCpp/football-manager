@@ -1,7 +1,7 @@
 package com.app.demo.controller.v1;
 
-import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerHistoryResponseDto;
+import com.app.demo.model.dto.FootballPlayerHistoryInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballPlayerHistoryResponseDto;
 import com.app.demo.service.interfaces.FootballPlayerFootballTeamHistoryService;
 import com.app.demo.service.interfaces.TransferService;
 import io.swagger.annotations.ApiOperation;
@@ -56,7 +56,7 @@ public class TeamHistoryController {
     public ResponseEntity<List<FootballPlayerHistoryResponseDto>> getFootballTeamHistory(@PathVariable String footballTeamUFTI,
                                                                                          @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateToBeSearched) {
 
-        List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList = footballPlayerFootballTeamHistoryService.getAllByTeamAndJoinDateAndExitDate(footballTeamUFTI, dateToBeSearched, dateToBeSearched);
+        List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList = footballPlayerFootballTeamHistoryService.getAllByTeamAndJoinDateAndExitDate(footballTeamUFTI, dateToBeSearched);
         log.info("getFootballTeamHistory is completed");
         return ResponseEntity.ok(footballPlayerHistoryResponseDtoList);
     }
