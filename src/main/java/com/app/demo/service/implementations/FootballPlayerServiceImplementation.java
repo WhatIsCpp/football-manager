@@ -3,6 +3,7 @@ package com.app.demo.service.implementations;
 import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
 import com.app.demo.dto.FootballPlayerInsertOrUpdateDto;
 import com.app.demo.dto.FootballPlayerResponseDto;
+import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.exceptions.FootballPlayerNotLegalException;
 import com.app.demo.mapper.DtoMapper;
 import com.app.demo.model.entity.FootballPlayer;
@@ -17,8 +18,6 @@ import com.app.demo.util.StaticsUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
-
-import com.app.demo.exceptions.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -37,10 +36,9 @@ public class FootballPlayerServiceImplementation implements FootballPlayerServic
     private final DtoMapper dtoMapper;
     private final MyBeansUtils myBeansUtils;
 
-    private final long legalAge = 18L;
-
     @Override
     public void saveOrUpdate(FootballPlayerInsertOrUpdateDto footballPlayerInsertOrUpdateDto) {
+        long legalAge = 18L;
         if (CalculationUtils.calculateYearsBetween(footballPlayerInsertOrUpdateDto.getBirthDate(), LocalDate.now()) < legalAge)
             throw new FootballPlayerNotLegalException("FootballPlayer is below age " + legalAge + " and cannot play ");
 

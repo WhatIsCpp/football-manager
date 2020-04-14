@@ -2,7 +2,6 @@ package com.app.demo.service.interfaces;
 
 import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
 import com.app.demo.dto.FootballPlayerHistoryResponseDto;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
