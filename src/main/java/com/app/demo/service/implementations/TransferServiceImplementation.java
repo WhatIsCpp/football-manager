@@ -5,6 +5,7 @@ import com.app.demo.dto.FootballPlayerHistoryResponseDto;
 import com.app.demo.dto.FootballPlayerResponseDto;
 import com.app.demo.dto.FootballPlayerTransferRequestDto;
 import com.app.demo.dto.FootballPlayerTransferResponseDto;
+import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.mapper.DtoMapper;
 import com.app.demo.model.entity.FootballPlayer;
 import com.app.demo.model.entity.FootballPlayerFootballTeamHistory;
@@ -21,7 +22,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.app.demo.exceptions.EntityNotFoundException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
@@ -109,7 +109,7 @@ public class TransferServiceImplementation implements TransferService {
         return ChronoUnit.MONTHS.between(dateFrom, dateTo);
     }
 
-    private HashMap<String, BigDecimal> calculateTransferAmounts(String uFPI, Long teamCommissionPercentage, LocalDate birthDate){
+    private HashMap<String, BigDecimal> calculateTransferAmounts(String uFPI, Long teamCommissionPercentage, LocalDate birthDate) {
 
         List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList = footballPlayerFootballTeamHistoryService.getAllByUFPI(uFPI);
 

@@ -26,28 +26,29 @@ public class TransferController {
 
     private final TransferService transferService;
 
+    @PostMapping
+    @ApiOperation(value = "Transfer the player with given inputs",
+            response = FootballPlayerResponseDto.class,
+            responseContainer = "List")
+    public ResponseEntity<FootballPlayerResponseDto> transferPlayer(@RequestBody FootballPlayerTransferRequestDto footballPlayerTransferRequestDto) {
+
+        FootballPlayerResponseDto footballPlayerResponseDto = transferService.transferPlayer(footballPlayerTransferRequestDto);
+        log.info("TransferPlayer is completed");
+        return ResponseEntity.ok(footballPlayerResponseDto);
+    }
+
     @GetMapping("/calculateFee")
     @ApiOperation(value = "Calculate transferFee with given inputs",
-    response = FootballPlayerTransferResponseDto.class,
-    responseContainer = "List")
+            response = FootballPlayerTransferResponseDto.class,
+            responseContainer = "List")
     public ResponseEntity<FootballPlayerTransferResponseDto> calculateTransferFee(@RequestParam String uFTI,
                                                                                   @RequestParam String uFPI,
-                                                                                  @RequestParam @DateTimeFormat(pattern="yyyy-MM-dd") LocalDate startDate,
-                                                                                  @RequestParam Long teamCommissionPercentage){
+                                                                                  @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
+                                                                                  @RequestParam Long teamCommissionPercentage) {
 
         FootballPlayerTransferResponseDto footballPlayerTransferResponseDto = transferService.getTransferFee(uFTI, uFPI, startDate, teamCommissionPercentage);
         log.info("CalculateTransferFee is completed");
         return ResponseEntity.ok(footballPlayerTransferResponseDto);
     }
 
-    @PostMapping
-    @ApiOperation(value = "Transfer the player with given inputs",
-    response = FootballPlayerResponseDto.class,
-    responseContainer = "List")
-    public ResponseEntity<FootballPlayerResponseDto> transferPlayer(@RequestBody FootballPlayerTransferRequestDto footballPlayerTransferRequestDto){
-
-        FootballPlayerResponseDto footballPlayerResponseDto = transferService.transferPlayer(footballPlayerTransferRequestDto);
-        log.info("TransferPlayer is completed");
-        return ResponseEntity.ok(footballPlayerResponseDto);
-    }
 }

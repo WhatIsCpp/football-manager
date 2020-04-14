@@ -23,13 +23,13 @@ public class DictionaryServiceImplementation implements DictionaryService {
     private final DtoMapper dtoMapper;
 
     @Override
-    public List<DictionaryResponseDto> getAllCountries(Pageable pageable){
+    public List<DictionaryResponseDto> getAllCountries(Pageable pageable) {
 
         return dtoMapper.asCountryDictionaryResponseDto(countryDictionaryRepository.findAll(pageable).getContent());
     }
 
     @Override
-    public List<DictionaryResponseDto> getAllCurrencies(Pageable pageable){
+    public List<DictionaryResponseDto> getAllCurrencies(Pageable pageable) {
 
         return dtoMapper.asCurrencyDictionaryResponseDto(currencyDictionaryRepository.findAll(pageable).getContent());
     }

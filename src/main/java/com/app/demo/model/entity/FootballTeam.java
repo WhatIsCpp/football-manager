@@ -1,10 +1,8 @@
 package com.app.demo.model.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -22,7 +20,7 @@ import java.util.List;
 @Table(name = "football_team", schema = "public")
 @EqualsAndHashCode(callSuper = true)
 @SequenceGenerator(name = "id_sequence", sequenceName = "football_team_sequence")
-public class FootballTeam extends BaseEntity{
+public class FootballTeam extends BaseEntity {
 
     private String name;
 

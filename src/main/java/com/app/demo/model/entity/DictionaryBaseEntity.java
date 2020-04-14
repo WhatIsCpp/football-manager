@@ -10,7 +10,7 @@ import javax.persistence.MappedSuperclass;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @MappedSuperclass
-public class DictionaryBaseEntity extends BaseEntity{
+public class DictionaryBaseEntity extends BaseEntity {
 
     @Column
     private String name;

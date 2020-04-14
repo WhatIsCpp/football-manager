@@ -2,9 +2,6 @@ package com.app.demo.controller.v1;
 
 import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
 import com.app.demo.dto.FootballPlayerHistoryResponseDto;
-import com.app.demo.dto.FootballPlayerInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerResponseDto;
-import com.app.demo.dto.FootballPlayerTransferResponseDto;
 import com.app.demo.service.interfaces.FootballPlayerFootballTeamHistoryService;
 import com.app.demo.service.interfaces.TransferService;
 import io.swagger.annotations.ApiOperation;
@@ -57,9 +54,9 @@ public class TeamHistoryController {
             response = FootballPlayerHistoryResponseDto.class,
             responseContainer = "List")
     public ResponseEntity<List<FootballPlayerHistoryResponseDto>> getFootballTeamHistory(@PathVariable String footballTeamUFTI,
-                                                                                         @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate DateToBeSearched) {
+                                                                                         @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateToBeSearched) {
 
-        List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList = footballPlayerFootballTeamHistoryService.getAllByTeamAndJoinDateAndExitDate(footballTeamUFTI, DateToBeSearched, DateToBeSearched);
+        List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList = footballPlayerFootballTeamHistoryService.getAllByTeamAndJoinDateAndExitDate(footballTeamUFTI, dateToBeSearched, dateToBeSearched);
         log.info("getFootballTeamHistory is completed");
         return ResponseEntity.ok(footballPlayerHistoryResponseDtoList);
     }

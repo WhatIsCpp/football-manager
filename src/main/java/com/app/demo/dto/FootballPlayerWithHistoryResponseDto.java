@@ -10,5 +10,5 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class FootballPlayerWithHistoryResponseDto extends FootballPlayerBaseDto {
 
-    List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList;
+    private List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList;
 }
