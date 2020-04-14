@@ -10,8 +10,6 @@ import com.app.demo.repository.CurrencyDictionaryRepository;
 import com.app.demo.repository.FootballPlayerFootballTeamHistoryRepository;
 import com.app.demo.repository.FootballPlayerRepository;
 import com.app.demo.repository.FootballTeamRepository;
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import org.apache.tomcat.jni.Local;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,7 +20,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -210,7 +207,7 @@ public class RepositoryTests {
         testEntityManager.flush();
 
         List<FootballPlayerFootballTeamHistory> footballPlayerFootballTeamHistoryList =
-                footballPlayerFootballTeamHistoryRepository.findAllByFootballTeam_UniqueFootballTeamIdentifierAndJoinDateIsBeforeAndExitDateIsAfter(TEST_UFPI, TEST_BEETWEEN_DATE, TEST_BEETWEEN_DATE);
+                footballPlayerFootballTeamHistoryRepository.findAllByDate(TEST_UFPI, TEST_BEETWEEN_DATE);
         Assert.assertFalse(footballPlayerFootballTeamHistoryList.isEmpty());
     }
 

@@ -1,8 +1,9 @@
 package com.app.demo.service.implementations;
 
-import com.app.demo.dto.FootballTeamInsertOrUpdateDto;
-import com.app.demo.dto.FootballTeamResponseDto;
+import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.mapper.DtoMapper;
+import com.app.demo.model.dto.FootballTeamInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballTeamResponseDto;
 import com.app.demo.model.entity.FootballTeam;
 import com.app.demo.repository.CountryDictionaryRepository;
 import com.app.demo.repository.CurrencyDictionaryRepository;
@@ -13,8 +14,6 @@ import com.app.demo.util.StaticsUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Pageable;
-
-import com.app.demo.exceptions.EntityNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

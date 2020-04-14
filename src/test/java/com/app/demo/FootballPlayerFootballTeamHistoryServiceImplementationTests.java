@@ -1,9 +1,9 @@
 package com.app.demo;
 
-import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerHistoryResponseDto;
 import com.app.demo.exceptions.EntityNotFoundException;
 import com.app.demo.mapper.DtoMapper;
+import com.app.demo.model.dto.FootballPlayerHistoryInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballPlayerHistoryResponseDto;
 import com.app.demo.model.entity.FootballPlayerFootballTeamHistory;
 import com.app.demo.repository.FootballPlayerFootballTeamHistoryRepository;
 import com.app.demo.repository.FootballPlayerRepository;
@@ -15,7 +15,6 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.data.domain.Pageable;
@@ -89,7 +88,7 @@ public class FootballPlayerFootballTeamHistoryServiceImplementationTests {
                 .thenReturn(footballPlayerHistoryResponseDtoList);
 
         Mockito.when(footballPlayerFootballTeamHistoryRepository
-                .findAllByFootballTeam_UniqueFootballTeamIdentifierAndJoinDateIsBeforeAndExitDateIsAfter(TEST_UFTI, TEST_JOIN_DATE, TEST_EXIT_DATE))
+                .findAllByDate(TEST_UFTI, TEST_JOIN_DATE))
                 .thenReturn(footballPlayerFootballTeamHistoryList);
 
         Mockito.when(dtoMapper.asFootballPlayerHistoryResponseDto(footballPlayerFootballTeamHistoryList))
@@ -113,7 +112,7 @@ public class FootballPlayerFootballTeamHistoryServiceImplementationTests {
 
     @Test
     public void whenGetAllByTeamAndJoinDateAndExitDate_thenReturnFootballPlayerHistoryResponseDtoList() {
-        List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList = footballPlayerFootballTeamHistoryService.getAllByTeamAndJoinDateAndExitDate(TEST_UFTI, TEST_JOIN_DATE, TEST_EXIT_DATE);
+        List<FootballPlayerHistoryResponseDto> footballPlayerHistoryResponseDtoList = footballPlayerFootballTeamHistoryService.getAllByTeamAndJoinDateAndExitDate(TEST_UFTI, TEST_JOIN_DATE);
 
         Assert.assertFalse(footballPlayerHistoryResponseDtoList.isEmpty());
     }

@@ -1,8 +1,8 @@
 package com.app.demo.service.interfaces;
 
-import com.app.demo.dto.FootballPlayerResponseDto;
-import com.app.demo.dto.FootballPlayerTransferRequestDto;
-import com.app.demo.dto.FootballPlayerTransferResponseDto;
+import com.app.demo.model.dto.FootballPlayerResponseDto;
+import com.app.demo.model.dto.FootballPlayerTransferRequestDto;
+import com.app.demo.model.dto.FootballPlayerTransferResponseDto;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;

@@ -1,21 +1,20 @@
 package com.app.demo.mapper;
 
-import com.app.demo.dto.DictionaryResponseDto;
-import com.app.demo.dto.FootballPlayerHistoryResponseDto;
-import com.app.demo.dto.FootballPlayerHistoryInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerInsertOrUpdateDto;
-import com.app.demo.dto.FootballPlayerResponseDto;
-import com.app.demo.dto.FootballPlayerTransferRequestDto;
-import com.app.demo.dto.FootballPlayerTransferResponseDto;
-import com.app.demo.dto.FootballPlayerWithHistoryResponseDto;
-import com.app.demo.dto.FootballTeamInsertOrUpdateDto;
-import com.app.demo.dto.FootballTeamResponseDto;
+import com.app.demo.model.dto.DictionaryResponseDto;
+import com.app.demo.model.dto.FootballPlayerHistoryInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballPlayerHistoryResponseDto;
+import com.app.demo.model.dto.FootballPlayerInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballPlayerResponseDto;
+import com.app.demo.model.dto.FootballPlayerTransferRequestDto;
+import com.app.demo.model.dto.FootballPlayerTransferResponseDto;
+import com.app.demo.model.dto.FootballPlayerWithHistoryResponseDto;
+import com.app.demo.model.dto.FootballTeamInsertOrUpdateDto;
+import com.app.demo.model.dto.FootballTeamResponseDto;
 import com.app.demo.model.entity.CountryDictionary;
 import com.app.demo.model.entity.CurrencyDictionary;
 import com.app.demo.model.entity.FootballPlayer;
 import com.app.demo.model.entity.FootballPlayerFootballTeamHistory;
 import com.app.demo.model.entity.FootballTeam;
-
 import fr.xebia.extras.selma.Field;
 import fr.xebia.extras.selma.IgnoreMissing;
 import fr.xebia.extras.selma.IoC;

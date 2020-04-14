@@ -9,13 +9,14 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-public class ExceptionHandler extends ResponseEntityExceptionHandler {
+public class Handler extends ResponseEntityExceptionHandler {
 
-    @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
+    @ExceptionHandler
     protected ResponseEntity<Object> handleAnyException(Exception e, WebRequest request) {
         String message = e.getMessage();
         String causeMessage = "";
@@ -30,7 +31,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
 
-    @org.springframework.web.bind.annotation.ExceptionHandler({EntityNotFoundException.class, FootballPlayerNotLegalException.class})
+    @ExceptionHandler({EntityNotFoundException.class, FootballPlayerNotLegalException.class})
     protected ResponseEntity<Object> handleDataTypeException(RuntimeException e, WebRequest request) {
         HttpStatus status = HttpStatus.NOT_FOUND;
 

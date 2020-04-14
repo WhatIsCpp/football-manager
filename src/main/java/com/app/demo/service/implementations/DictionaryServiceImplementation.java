@@ -1,7 +1,7 @@
 package com.app.demo.service.implementations;
 
-import com.app.demo.dto.DictionaryResponseDto;
 import com.app.demo.mapper.DtoMapper;
+import com.app.demo.model.dto.DictionaryResponseDto;
 import com.app.demo.repository.CountryDictionaryRepository;
 import com.app.demo.repository.CurrencyDictionaryRepository;
 import com.app.demo.service.interfaces.DictionaryService;
